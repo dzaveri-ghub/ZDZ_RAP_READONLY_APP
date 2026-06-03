@@ -1,0 +1,7 @@
+@EndUserText.label: 'Service Definition: Sales App Read Only'
+define service ZDZ_SD_SALES_READONLY {
+  expose ZDZ_I_SOHEADER;
+  expose zdz_i_soitem;
+  expose ZDZ_I_CUSTHEADER;
+  expose ZDZ_I_PRODUCT;
+}
