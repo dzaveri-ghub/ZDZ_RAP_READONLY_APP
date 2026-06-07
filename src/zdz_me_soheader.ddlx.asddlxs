@@ -1,0 +1,82 @@
+@Metadata.layer: #CUSTOMER
+
+@UI.headerInfo: {                     //Limited to Header Titles
+    typeName: 'SalesOrder',
+    typeNamePlural: 'Sales Orders',
+    title: {
+        type: #STANDARD,
+        label: 'Order Details',
+        value: 'Soid'
+    },
+    description: {
+        type: #STANDARD,
+        label: 'OrderDetails',
+        value: 'soid'
+    }
+}
+
+annotate entity ZDZ_R_SOHEADER
+    with 
+{
+    //@EndUserText.label: 'Sales Order Header'
+    //Soid;
+    
+    
+    //Facet for Sales Order Id
+    
+    @UI.facet: [
+                { id: 'OrderDetails',
+                  purpose: #STANDARD,
+                   position: 10,
+                   label: 'Order Details',
+                   type: #IDENTIFICATION_REFERENCE
+                },
+                   
+    //Facet for Customer
+    
+                 { 
+                  id: 'CustomerDetails',
+                  purpose: #STANDARD,
+                  position: 20,
+                  label: 'Customer Details',
+                  type: #IDENTIFICATION_REFERENCE,
+                  targetElement: '_cust'
+                  },
+                
+                
+     //Facet for Sales Order Item
+    
+                 { 
+                  id: 'SOItem',
+                  purpose: #STANDARD,
+                  position: 30,
+                  label: 'Sales Order Item',
+                  type: #LINEITEM_REFERENCE,
+                  targetElement: '_soitem'
+                  }
+                ]
+    
+    
+    //List Titles
+    
+    @UI.lineItem: [{ position: 10,label: 'Sales Order' }]
+    
+    @UI.identification: [{ position: 10, label: 'Sales Order' }]
+    
+    @UI.selectionField: [{ position: 20 }]
+    @EndUserText.label: 'SalesOrder'
+    Soid;
+    
+    @UI.lineItem: [{ position: 10,label: 'Buyer ' }]
+    
+    @UI.identification: [{ position: 20, label: 'Buyer' }]
+    
+    @UI.selectionField: [{ position: 10 }]
+    @EndUserText.label: 'Customer'
+    Buyer;
+    
+    
+    /* Associations */
+    //_cust;
+    //_soitem;
+}

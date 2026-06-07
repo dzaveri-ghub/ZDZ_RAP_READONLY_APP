@@ -1,0 +1,67 @@
+@Metadata.layer: #CUSTOMER
+
+@UI.headerInfo: {                     //Limited to Header Titles
+    typeName: 'SalesItem',
+    typeNamePlural: 'Sales Items',
+    title: {
+        type: #STANDARD,
+        label: 'Sales Item Details',
+        value: 'Soid'
+    },
+    description: {
+        type: #STANDARD,
+        label: 'SalesItemDetails',
+        value: 'soid'
+    }
+}
+annotate entity zdz_i_soitem
+    with 
+{
+
+
+@UI.facet: [   // SO Item Details Facet
+                { id: 'ItemDetails',
+                  purpose: #STANDARD,
+                   position: 10,
+                   label: 'Sales Item Details',
+                   type: #IDENTIFICATION_REFERENCE
+                },
+                
+                //Product Facet
+                { 
+                  
+                   id: 'ProdDetails',
+                   purpose: #STANDARD,
+                   position: 10,
+                   label: 'Product Details',
+                   type: #IDENTIFICATION_REFERENCE,
+                   targetElement: '_prod'
+                }
+                
+                ]
+
+    @UI.lineItem: [{ position: 10, label: 'Sales Order' }]   //Lineitem for soitem list in 2 layer display
+    
+    @UI.identification: [{ position: 10, label: 'Sales Order' }]  // single SO item display in 3rd layer
+    Soid;
+    
+    @UI.lineItem: [{ position: 20, label: 'Sales Item' }]
+    
+    @UI.identification: [{ position: 20, label: 'Sales Item' }]
+    ItemId;
+    
+    @UI.lineItem: [{ position: 30, label: 'Product' }]
+    
+    @UI.identification: [{ position: 30, label: 'Product' }]
+    Product;
+    
+    @UI.lineItem: [{ position: 40, label: 'Amount' }]
+    
+    @UI.identification: [{ position: 40, label: 'Amount' }]
+    Amount;
+    
+    @UI.lineItem: [{ position: 50, label: 'Currency' }]
+    @UI.identification: [{ position: 50, label: 'Currency' }]
+    Currency;
+
+}

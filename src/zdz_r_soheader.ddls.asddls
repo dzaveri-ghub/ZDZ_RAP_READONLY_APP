@@ -1,9 +1,15 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Root CDS: SO Header'
 @Metadata.ignorePropagatedAnnotations: true
+@Metadata.allowExtensions: true
 
 define root view entity ZDZ_R_SOHEADER as select from zdz_dt_so
+    
     composition [1..*] of zdz_i_soitem as _soitem
+    
+    association [1..1] to ZDZ_I_CUST as _cust
+        on $projection.Buyer    =   _cust.CustId
+    
 {
     
     key zdz_dt_so.soid as Soid,
@@ -17,5 +23,6 @@ define root view entity ZDZ_R_SOHEADER as select from zdz_dt_so
     zdz_dt_so.changed_by as ChangedBy,
     zdz_dt_so.changed_on as ChangedOn,
     zdz_dt_so.url as Url,
-    _soitem // Make association public
+    _soitem,
+    _cust // Make association public
 }
