@@ -1,0 +1,24 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZDZ_I_DEL_SCHE
+    with 
+{
+
+    @UI.identification: [{ position: 10 }]
+    Soid;
+    
+    @UI.identification: [{ position: 20 }]
+    ItemId;
+    
+    @UI.identification: [{ position: 30 }]
+    DelvId;
+    
+    @UI.identification: [{ position: 40 }]
+    Product;
+    
+    @UI.identification: [{ position: 50 }]
+    Quantity;
+    
+    @UI.identification: [{ position: 60 }]
+    DeliveryDate;
+    
+}

@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZZC_DZDT_CUSTOMER'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZZC_DZDT_CUSTOMER'
+  }
+}
+define service ZZUI_DZDT_CUSTOMER_O4 provider contracts odata_v4_ui {
+  expose ZZC_DZDT_CUSTOMER;
+}

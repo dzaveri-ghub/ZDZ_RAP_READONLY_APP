@@ -36,6 +36,17 @@ annotate entity zdz_i_soitem
                    label: 'Product Details',
                    type: #IDENTIFICATION_REFERENCE,
                    targetElement: '_prod'
+                },
+                
+                //Product Facet
+                { 
+                  
+                   id: 'DelScheDetails',
+                   purpose: #STANDARD,
+                   position: 10,
+                   label: 'Delivery Schedule Details',
+                   type: #IDENTIFICATION_REFERENCE,
+                   targetElement: '_delsche'
                 }
                 
                 ]

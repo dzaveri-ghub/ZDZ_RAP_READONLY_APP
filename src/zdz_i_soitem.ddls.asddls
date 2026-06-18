@@ -11,6 +11,11 @@ define view entity zdz_i_soitem
     
     association to ZDZ_I_PRODUCT as _prod
         on $projection.Product  =   _prod.ProdId
+        
+    association to ZDZ_I_DEL_SCHE as _delsche
+        on $projection.Soid =   _delsche.Soid
+       and $projection.ItemId   =  _delsche.ItemId
+       
 {
 
     key soid as Soid,
@@ -27,6 +32,7 @@ define view entity zdz_i_soitem
     changed_on as ChangedOn,
     image_item as ImageItem,
     SOHeader,
-    _prod
+    _prod,
+    _delsche
         
 }

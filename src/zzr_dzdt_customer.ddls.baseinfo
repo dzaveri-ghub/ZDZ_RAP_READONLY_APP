@@ -3,14 +3,10 @@
 {
 "FROM":
 [
-"ZDZ_DT_SOITEM"
+"ZDZ_DT_CUSTOMER"
 ],
 "ASSOCIATED":
-[
-"ZDZ_I_DEL_SCHE",
-"ZDZ_I_PRODUCT",
-"ZDZ_R_SOHEADER"
-],
+[],
 "BASE":
 [],
 "ANNO_REF":
